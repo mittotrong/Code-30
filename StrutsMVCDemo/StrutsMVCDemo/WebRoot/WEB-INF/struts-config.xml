@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  
+  <form-beans>
+  	<form-bean type="com.bean.LoginBean" name="loginBean"></form-bean>
+  	<form-bean type="com.bean.PersonBean" name="personBean"></form-bean>
+  </form-beans>
+  
+  <action-mappings>
+  <!-- Action For Login User In Application -->
+  	<action path="/loginBean" name="loginBean" scope="session" type="com.controller.LoginAuthController" >
+  		<forward name="fail" path="/Home.jsp" ></forward>
+  		<forward name="success" path="/Register.jsp" ></forward>
+  	</action>
+  	
+  	<!-- Action For Person Register In Application -->
+  	<action path="/personBean" name="personBean" scope="request" type="com.controller.PersonRegisterController" >
+  		<forward name="failRegister" path="/Register.jsp" ></forward>
+  		<forward name="register" path="/personList.do" ></forward>
+  	</action>
+  	
+  	<!-- Action For Person List If Person Register Successful In Application -->
+  	<action path="/personList" name="personBean" scope="request" type="com.controller.PersonRegisterListController" >
+  		<forward name="listOfPerson" path="/RegisterPersonList.jsp" ></forward>
+  	</action>
+  	
+  	<!-- Action For Selected Person Pass By Person Id In Application -->
+  	<action path="/personSelect" name="personBean" scope="request" type="com.controller.PersonRegistorSelectController" >
+  		<forward name="selectedPerson"  path="/RegisterEdit.jsp" ></forward>
+  	</action>
+  	
+  	<!-- Action For Update Person In Application -->
+  	<action path="/personUpdate"  name="personBean" scope="request" type="com.controller.PersonRegistorUpdateController" >
+  		<forward name="selectedPersonUpdate" path="/personList.do" ></forward>
+  		<forward name="failSelectedPersonUpdate" path="/RegisterEdit.jsp" ></forward>
+  	</action>
+  	
+  	<!-- Action For Delete Person In Application -->
+  	<action path="/personDelete" name="personBean" scope="request" type="com.controller.PersonRegistorDeleteController" >
+  		<forward name="selectedPersonDelete" path="/personList.do"  ></forward>
+  		<forward name="selectedPersonDeleteFail" path="/personList.do" ></forward>
+  	</action>
+  	
+  	
+  	<!-- Action For PDF Report In Application -->
+  	<action path="/personPDF" name="personBean" scope="request" type="com.controller.PersonRegisterPDFController" >
+  		<forward name="createReport" path="/index.jsp" ></forward>
+  	</action>
+  </action-mappings>
+  
+  <message-resources parameter="validationRule.ApplicationResources" />
+  <plug-in className="com.controller.ApplicationResource"></plug-in>
+</struts-config>
+

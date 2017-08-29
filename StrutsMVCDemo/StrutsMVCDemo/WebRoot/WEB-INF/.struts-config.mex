@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/loginBean.do" location="50,50" dimension="98,66" />
+  <StrutsActivity path="/personBean.do" location="950,50" dimension="229,96" />
+  <StrutsActivity path="/personList.do" location="350,250" dimension="269,96" />
+  <StrutsActivity path="/personSelect.do" location="950,250" dimension="283,96" />
+  <StrutsActivity path="/personUpdate.do" location="950,450" dimension="283,96" />
+  <StrutsActivity path="/personDelete.do" location="50,650" dimension="290,96" />
+  <StrutsActivity path="/personPDF.do" location="650,650" dimension="285,96" />
+  <StrutsActivity path="/Home.jsp" location="350,50" dimension="86,51" />
+  <StrutsActivity path="/Register.jsp" location="50,250" dimension="95,51" />
+  <StrutsActivity path="/RegisterPersonList.jsp" location="50,450" dimension="149,51" />
+  <StrutsActivity path="/RegisterEdit.jsp" location="650,450" dimension="115,51" />
+  <StrutsActivity path="/index.jsp" location="650,50" dimension="81,51" />
+  <StrutsActivity path="/.jsp" location="350,450" dimension="53,51" />
+  <StrutsTransition id="/personUpdate.do,failSelectedPersonUpdate,/RegisterEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,475" />
+      <AbsolutePoint location="765,475" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personDelete.do,selectedPersonDelete,/personList.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="340,698" />
+      <AbsolutePoint location="454,698" />
+      <AbsolutePoint location="454,346" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personDelete.do,selectedPersonDeleteFail,/personList.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="340,668" />
+      <AbsolutePoint location="424,668" />
+      <AbsolutePoint location="424,346" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personList.do,listOfPerson,/RegisterPersonList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,316" />
+      <AbsolutePoint location="94,316" />
+      <AbsolutePoint location="94,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personBean.do,register,/personList.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,86" />
+      <AbsolutePoint location="836,86" />
+      <AbsolutePoint location="836,298" />
+      <AbsolutePoint location="619,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginBean.do,success,/Register.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="67,116" />
+      <AbsolutePoint location="67,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personUpdate.do,selectedPersonUpdate,/personList.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,516" />
+      <AbsolutePoint location="484,516" />
+      <AbsolutePoint location="484,346" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personSelect.do,selectedPerson,/RegisterEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,268" />
+      <AbsolutePoint location="707,268" />
+      <AbsolutePoint location="707,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personPDF.do,createReport,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="792,698" />
+      <AbsolutePoint location="690,75" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personBean.do,failRegister,/Register.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,131" />
+      <AbsolutePoint location="97,131" />
+      <AbsolutePoint location="97,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginBean.do,fail,/Home.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="148,75" />
+      <AbsolutePoint location="350,75" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
